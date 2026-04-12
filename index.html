@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venkatesh Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#4f46e5;
+  --bg:#0f172a;
+  --text:#e5e7eb;
+  --card:#1e293b;
+}
+
+body.light{
+  --bg:#ffffff;
+  --text:#111827;
+  --card:#f3f4f6;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  scroll-behavior:smooth;
+}
+
+/* Navbar */
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+nav a{
+  margin:0 15px;
+  text-decoration:none;
+  color:var(--text);
+}
+
+nav a:hover{
+  color:var(--primary);
+}
+
+.toggle{
+  cursor:pointer;
+}
+
+/* Sections */
+section{
+  padding:100px 40px;
+}
+
+/* Hero */
+.hero{
+  text-align:center;
+}
+
+/* Profile Image */
+.profile-container{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  margin-bottom:20px;
+}
+
+.profile-img{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid var(--primary);
+  z-index:2;
+  transition:0.4s;
+}
+
+.profile-container::before{
+  content:'';
+  position:absolute;
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  background:linear-gradient(45deg,#4f46e5,#9333ea,#06b6d4);
+  animation:spin 6s linear infinite;
+  filter:blur(10px);
+}
+
+.profile-img:hover{
+  transform:scale(1.08);
+}
+
+@keyframes spin{
+  0%{transform:rotate(0);}
+  100%{transform:rotate(360deg);}
+}
+
+/* Cards */
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:12px;
+  margin-top:20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+/* Button */
+.btn{
+  margin-top:20px;
+  padding:10px 20px;
+  background:var(--primary);
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  color:#9ca3af;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h3>Venkatesh</h3>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="toggle" onclick="toggleMode()">🌙</div>
+</header>
+
+<section class="hero">
+  <div class="profile-container">
+    <img src="https://i.postimg.cc/VL6vV9QH/IMG-20240411-WA0000.jpg" class="profile-img">
+    class="profile-img">
+  </div>
+
+  <h1>BAMMIDI VENKATESWARA RAO</h1>
+  <p>Full Stack Python Developer</p>
+  <button class="btn" onclick="scrollToSection('contact')">Contact Me</button>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <div class="card">
+    Motivated fresher with strong fundamentals in Python, SQL, DBMS and web technologies.
+    Passionate about building real-world solutions and continuously learning new technologies.
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">Python</div>
+    <div class="card">SQL</div>
+    <div class="card">DBMS</div>
+    <div class="card">HTML CSS JS</div>
+    <div class="card">GitHub</div>
+    <div class="card">Power BI</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card">
+    <h3>IoT IV Bag Monitoring System</h3>
+    <p>Built IoT system with 95% accuracy and alert system using sensors.</p>
+    <a href="https://github.com/Venkyvirat0018" target="_blank">View GitHub</a>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="card">
+    <h3>Cloud Intern</h3>
+    <p>Worked on cloud deployment and real-world systems.</p>
+  </div>
+
+  <div class="card">
+    <h3>IoT Intern</h3>
+    <p>Built smart IoT solutions and worked with sensors.</p>
+  </div>
+
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: bammidivenky40@gmail.com</p>
+    <p><a href="https://github.com/Venkyvirat0018">GitHub</a></p>
+    <p><a href="http://www.linkedin.com/in/">LinkedIn</a></p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Venkatesh Portfolio 🚀
+</footer>
+
+<script>
+function toggleMode(){
+  document.body.classList.toggle("light");
+}
+
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
